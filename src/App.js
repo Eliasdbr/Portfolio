@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+// Components
+import Button from './components/Button';
+
+// Diferentes temas
+const theme = {
+	bg: '#65cc32',
+	main: '#0c1906',
+	disabled: '#b0cca3',
+	hover: '#7ae544',
+	active: '#5fb235',
+};
 
 function App() {
 	return (
-		<div className="App">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-				<p>
-					Edit <code>src/App.js</code> and save to reload.
-				</p>
-				<a
-					className="App-link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Learn React
-				</a>
-			</header>
-		</div>
+		<ThemeProvider theme={theme}>
+			<div className="App">
+				<Button />
+			</div>
+		</ThemeProvider>
 	);
 }
 
